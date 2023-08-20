@@ -48,7 +48,7 @@ void initState() {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Trending Movies", style: TextStyle(fontSize: 16)),
+            Text("Trending Movies", style: TextStyle(fontSize: 20)),
             SizedBox(height: 20),
              SizedBox(
               child: FutureBuilder(
@@ -67,7 +67,7 @@ void initState() {
             ),
             SizedBox(height: 16),
             Text("Top rated movies",
-             style: TextStyle(fontSize: 16) ,
+             style: TextStyle(fontSize: 20) ,
              ),
              SizedBox(height: 32),
              SizedBox(
@@ -85,8 +85,9 @@ void initState() {
               },
               ),
             ),
+              SizedBox(height: 20),
               Text("Upcoming movies",
-             style: TextStyle(fontSize: 16) ,
+             style: TextStyle(fontSize: 20) ,
              ),
               SizedBox(height: 32),
             SizedBox(

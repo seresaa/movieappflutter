@@ -2,6 +2,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movieapp/constants.dart';
+import 'package:movieapp/details_screen.dart';
 
 
 
@@ -29,16 +30,21 @@ class TrendMoviesSlider extends StatelessWidget {
       ),
       // ignore: non_constant_identifier_names
       itemBuilder: (context, itemIndex, PageViewIndex){
-        return ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: SizedBox(
-            height: 300,
-            width: 200,
-          child: Image.network(
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.cover,
-            '${Constants.imagePath}${snapshot.data[itemIndex].posterPath}'
-          ),
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Details_Screen(movie: snapshot.data[itemIndex],)));
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: SizedBox(
+              height: 300,
+              width: 200,
+            child: Image.network(
+              filterQuality: FilterQuality.high,
+              fit: BoxFit.cover,
+              '${Constants.imagePath}${snapshot.data[itemIndex].posterPath}'
+            ),
+            ),
           ),
         );
       },
